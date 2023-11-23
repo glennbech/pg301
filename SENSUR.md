@@ -1,0 +1,1 @@
+skrive instrukjsoner til sensor her
