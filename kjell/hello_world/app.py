@@ -16,7 +16,12 @@ s3_client = boto3.client('s3', region_name='eu-west-1')
 rekognition_client = boto3.client('rekognition', region_name='eu-west-1')
 
 # Oppgave 1A
-BUCKET_NAME = "kjellsimagebucker"
+# henter bucket navn fra .env
+try:
+    BUCKET_NAME = os.environ['BUCKET_NAME']
+except KeyError:
+    raise ValueError("The environment variable <BUCKET_NAME> seems to be missing.")
+
 
 def lambda_handler(event, context):
 
@@ -45,5 +50,6 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "body":  json.dumps(rekognition_results),
     }
+
 
 print(lambda_handler(None, None))

@@ -1,7 +1,7 @@
 resource "aws_apprunner_service" "service" {
-  service_name = var.student_name
+  service_name = var.apprunner_name
 
-  instance_configuration {
+  instance_configuration {  # cpu?
     instance_role_arn = aws_iam_role.role_for_apprunner_service.arn
   }
 
