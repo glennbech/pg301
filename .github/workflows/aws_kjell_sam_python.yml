@@ -26,5 +26,5 @@ jobs:
 
     - name: Deploy SAM application
       if: github.ref == 'refs/heads/master'
-      run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name kandidat2013 --capabilities CAPABILITY_IAM --resolve-s3
+      run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name fisestack --capabilities CAPABILITY_IAM --resolve-s3
       working-directory: ./kjell
