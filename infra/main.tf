@@ -3,9 +3,11 @@ resource "aws_apprunner_service" "service" {
 
   instance_configuration {  # cpu?
     instance_role_arn = aws_iam_role.role_for_apprunner_service.arn
+    cpu = 256
+    memory = 1024
   }
 
-  source_configuration {
+  source_configuration { # her må noe kunne fikses
     authentication_configuration {
       access_role_arn = "arn:aws:iam::244530008913:role/service-role/AppRunnerECRAccessRole"
     }
