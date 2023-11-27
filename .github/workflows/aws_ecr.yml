@@ -58,7 +58,17 @@ jobs:
       - name: Terraform Init
         working-directory: ./infra
         run: terraform init -backend-config="bucket=bubucbucbucbbucbuc2013candidate2013" -backend-config="key=terraform/state"
-
+        env:
+          TF_LOG: DEBUG
+          
+      - name: Terraform Plan
+        working-directory: ./infra
+        run: terraform plan
+        env:
+          TF_LOG: DEBUG    
+          
       - name: Terraform Apply
         working-directory: ./infra
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -input=false
+        env:
+          TF_LOG: DEBUG
