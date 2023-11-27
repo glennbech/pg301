@@ -81,4 +81,6 @@ jobs:
           TF_VAR_ecr_repository_uri: "244530008913.dkr.ecr.eu-west-1.amazonaws.com/candidate2013"
           TF_VAR_apprunner_service_name: candidate2013
           TF_VAR_apprunner_policy_name: policy2013
+          TF_VAR_iam_role_name: role2013
+          TF_VAR_iam_policy_name: policy2013
   
