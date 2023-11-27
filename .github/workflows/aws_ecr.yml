@@ -1,31 +1,33 @@
 name: Build & Deploy ECR
 
-on: [push]
+on: 
+  push:
+    branches:
+      - master
 
 env:
-  AWS_REGION: eu-west-1
   ECR_REPOSITORY: candidate2013
-  
-  jobs:
+
+jobs:
   build-and-push-ecr:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Configure AWS credentials
+      - name: AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'eu-west-1'
+          aws-region: eu-west-1
 
       - name: Login to AWS ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Build, tag, and push image to AWS ECR
+      - name: Create Docker Image and Upload to ECR
         run: |
           IMAGE_TAG=${{ github.sha }}
           ECR_REGISTRY=${{ steps.login-ecr.outputs.registry }}
@@ -33,3 +35,4 @@ env:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+
