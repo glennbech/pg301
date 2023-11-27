@@ -12,6 +12,7 @@ env:
   TF_VAR_instance_role_arn: "arn:aws:iam::244530008913:role/service-role/AppRunnerECRAccessRole"
   TF_VAR_access_role_arn: "arn:aws:iam::244530008913:role/service-role/AppRunnerECRAccessRole"
   TF_VAR_image_identifier: "244530008913.dkr.ecr.eu-west-1.amazonaws.com/candidate2013:latest"
+  ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
 
 jobs:
   build-and-push-ecr:
