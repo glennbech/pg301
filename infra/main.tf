@@ -9,7 +9,7 @@ resource "aws_apprunner_service" "service" {
 
   source_configuration { # her må noe kunne fikses
     authentication_configuration {
-      access_role_arn = var.access_role_arn
+      access_role_arn = "arn:aws:iam::244530008913:role/service-role/AppRunnerECRAccessRole"
     }
     image_repository {
       image_configuration {
