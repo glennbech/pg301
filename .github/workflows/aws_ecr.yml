@@ -59,10 +59,6 @@ jobs:
         working-directory: ./infra
         run: terraform init -backend-config="bucket=bubucbucbucbbucbuc2013candidate2013" -backend-config="key=terraform/state"
 
-      - name: Terraform Plan
-        working-directory: ./infra
-        run: terraform plan
-
       - name: Terraform Apply
         working-directory: ./infra
         run: terraform apply -auto-approve
