@@ -8,6 +8,10 @@ on:
 env:
   ECR_REPOSITORY: candidate2013
   AWS_REGION: eu-west-1
+  TF_VAR_apprunner_name: candidate2013
+  TF_VAR_instance_role_arn: "arn:aws:iam::244530008913:role/service-role/AppRunnerECRAccessRole"
+  TF_VAR_access_role_arn: "arn:aws:iam::244530008913:role/service-role/AppRunnerECRAccessRole"
+  TF_VAR_image_identifier: "244530008913.dkr.ecr.eu-west-1.amazonaws.com/candidate2013:latest"
 
 jobs:
   build-and-push-ecr:
@@ -30,7 +34,7 @@ jobs:
 
       - name: Create Docker Image and Upload to ECR
         run: |
-          IMAGE_TAG=${{ github.sha }}
+          IMAGE_TAG=${{ github rev-parse --short=8 HEAD}}
           ECR_REGISTRY=${{ steps.login-ecr.outputs.registry }}
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
@@ -61,14 +65,15 @@ jobs:
         env:
           TF_LOG: DEBUG
           
-      - name: Terraform Plan
-        working-directory: ./infra
-        run: terraform plan
-        env:
-          TF_LOG: DEBUG    
-          
       - name: Terraform Apply
         working-directory: ./infra
         run: terraform apply -auto-approve -input=false
         env:
           TF_LOG: DEBUG
+          TF_VAR_apprunner_name: candidate2013
+          TF_VAR_instance_role_arn: "arn:aws:iam::244530008913:role/service-role/AppRunnerECRAccessRole"
+          TF_VAR_apprunner_container_port: 8080
+          TF_VAR_ecr_repository_uri: "244530008913.dkr.ecr.eu-west-1.amazonaws.com/candidate2013"
+          TF_VAR_apprunner_service_name: candidate2013
+          TF_VAR_apprunner_policy_name: policy2013
+  
