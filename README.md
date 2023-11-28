@@ -1,5 +1,5 @@
-![workflow1](https://github.com/s0riano/pg301/actions/workflows/aws_ecr.yml/badge.svg))
-
+![aws_ecr](https://github.com/s0riano/pg301/actions/workflows/aws_ecr.yml/badge.svg)
+![aws_kjell_sam_python](https://github.com/s0riano/pg301/actions/workflows/aws_kjell_sam_python.yml/badge.svg)
 ## Setup
 
 
