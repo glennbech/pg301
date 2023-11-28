@@ -1,4 +1,4 @@
-## OPPGAVE 1
+## Setup
 
 
 For å gjennomføre denne oppgaven/workflowen (og de kommende) må du 
