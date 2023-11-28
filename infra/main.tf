@@ -15,7 +15,7 @@ resource "aws_apprunner_service" "service" {
       image_configuration {
         port = "8080"
       }
-      image_identifier      = var.image_identifier
+      image_identifier      =  "${var.image_identifier}:latest"
       image_repository_type = "ECR"
     }
     auto_deployments_enabled = true
