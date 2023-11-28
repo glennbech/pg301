@@ -224,7 +224,7 @@ variable "iam_policy_name" {
 
 
 Jeg slet litt med å få de variablene jeg omgjorde fra hardkodede til å 
-fungere. De gikk de seg til tilslutt derimot :)
+fungere. Tilslutt gikk de seg :)
 
 
 ## B
@@ -240,12 +240,12 @@ Disse kan justeres slik du foretrekker:
 
 Her ser du hva den ble kalt på ecr. De stemmer overens, litt usikker på hvor
 3-tallet på slutten kommer fra derimot. Mulig jeg har en typo et sted... Heldigvis
-vet vi at den tar taggen iallefall! :)
+vet vi at den tar med taggen iallefall! :)
 
 ![image](img/ecr.png)
 
 
-## OPPGAVE 4 
+## OPPGAVE 4 *(5)*
 
 ##A.**Kontinuerlig Integrering**
 
@@ -335,7 +335,21 @@ når det er mange baller i luften.
 
 
 **Sammenligning og Kontrast**
-Scrum prioriterer 
+Scrum er ideelt for prosjekter med skiftende krav. Gjerne hvor kunders krav er 
+sentralt og feedback er avgjorende, er scrum utrolig nuttig. Om det er tidelig i
+en oppstartsfase eller sluttproduktet er uklart, vil igjen scrum være en god 
+løsning. DevOps fokuserer også på å levere raskt, men prioriterer også ting som
+automatisering og deployment, noe som gjerne er mer relevant når et prosjekt har
+fått litt dybde og kropp. Selv merket jeg gjennom bruk av Scrum, at ting ofte ikke
+gikk som planlagt, og ble skyvet bakover. Mye kan ty til at dette er en del av naturen
+til Scrum (scope-creep), og det er noe jeg dessverre missliker. Men kan det egentlig 
+bli gjort raskere? Personelig mener jeg ja. Gjennom jobb har jeg tatt i bruk KanBan 
+som metodikk, og det syntes jeg går raskere, er mer på ball,i tillegg til at 
+jeg føler meg mer effektiv. Kanban gjør ting mer strømlinjeformet og har en mer 
+kontinuerlig tilnærming sammenlignet med Scrum. Den fokuserer på å minimere 
+"bottlenecks" og maksimere flyten. Devops kan integreres med KanBan for å presse
+mot en mer visuell styring av arbeidsflyten. og kombinere disse syntes jeg gjør 
+utviklings- og operasjonsfasene klarere og enda mer effektive.
 
 
 
