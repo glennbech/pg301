@@ -76,7 +76,6 @@ jobs:
         env:
           TF_LOG: DEBUG
           TF_VAR_apprunner_name: candidate2013
-          TF_VAR_instance_role_arn: "aws_iam_role.role_for_apprunner_service.arn"
           TF_VAR_image_identifier: "244530008913.dkr.ecr.eu-west-1.amazonaws.com/candidate2013"
           TF_VAR_iam_role_name: role2013
           TF_VAR_iam_policy_name: policy2013

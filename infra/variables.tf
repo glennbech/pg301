@@ -5,10 +5,10 @@ variable "apprunner_name" {
 
 # task 2
 
-variable "instance_role_arn" {
-  description = "ARN for the instance role used in App Runner"
-  type        = string
-}
+#variable "instance_role_arn" {
+#  description = "ARN for the instance role used in App Runner"
+#  type        = string
+#}
 
 variable "access_role_arn" {
   description = "ARN for access role used in App Runner"
