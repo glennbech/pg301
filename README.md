@@ -357,3 +357,18 @@ utviklings- og operasjonsfasene klarere og enda mer effektive.
 
 **C. Det Andre Prinsippet - Feedback**
 
+Overvåkning er noe jeg fort ville implimentert i applikasjonen. Muligheten til å 
+se hvordan brukere klikker seg rundt og integrerer med en applikasjonen kan fort 
+hjelp til med å se hvordan en applikasjon kan optimaiseres og justeres for å 
+oppnå en bedre funksjonalitet for brukeren. 
+
+Metrics ville jeg også implementert. Om vi hadde levert en ny funksjonalitet hadde
+det vært fantastisk å fått se på relaterte nøkkeltall. Det kan hjelp til å se om 
+den nye funksjonaliteten leverer som forventet, samt se om det fremdeles er 
+forbedringsmuligheter.
+
+
+Hvordan bidrar feedback til kontinuerlig forbedring?
+Feedback er sentralt for at hva utvikleren velger å forbedre, faktis forbedrer
+produktet. Teamet vet mer presist hva som brukere er ute etter og hva folk
+trenger til å gjøre programvaren enda mer lukrativ.
