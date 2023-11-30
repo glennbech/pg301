@@ -56,7 +56,7 @@ COPY . .
 
 CMD ["python", "./app.py"]
 ```
-![image](img/opg1B.png)
+
 
 
 ## Oppgave 2
