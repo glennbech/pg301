@@ -38,7 +38,7 @@ jobs:
 
       - name: Create Docker Image and Upload to ECR
         env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }} #IMAGE_TAG=${{ github rev-parse --short=8 HEAD}}
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         run: |
           ECR_REGISTRY=${{ steps.login-ecr.outputs.registry }}
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
@@ -66,7 +66,7 @@ jobs:
 
       - name: Terraform Init
         working-directory: ./infra
-        run: terraform init -backend-config="bucket=bubucbucbucbbucbuc2013candidate2013" -backend-config="key=terraform/state"
+        run: terraform init -backend-config="bucket=bubucbucbucbbucbuc2013candidate2013" -backend-config="key=terraform/state-s"
         env:
           TF_LOG: DEBUG
           
